@@ -2,10 +2,10 @@ import React from "react";
 
 // import { Container, Col, Row, Form } from "react-bootstrap";
 
-import FormikB from "../../Components/FormikB";
+import FormikD from "../../Components/FormikD";
 
 export default function Merchant() {
-    return <FormikB />;
+    return <FormikD />;
 }
 
 // export default function Merchant() {
