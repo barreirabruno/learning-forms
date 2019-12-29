@@ -37,6 +37,12 @@ export default function FormikH() {
                         .email("Invalid email address")
                         .required("Required field"),
                 })}
+                onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                        alert(JSON.stringify(values, null, 2));
+                        setSubmitting(false);
+                    }, 400);
+                }}
             >
                 <Form>
                     <MyTextInput
@@ -63,6 +69,7 @@ export default function FormikH() {
                         type="password"
                         placeholder="Your secret password"
                     />
+                    <button type="submit">Submit</button>
                 </Form>
             </Formik>
         </>
