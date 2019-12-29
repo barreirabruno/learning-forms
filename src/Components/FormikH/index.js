@@ -1,19 +1,7 @@
 import React from "react";
-import { Formik, Form, useField } from "formik";
+import { Formik, Form } from "formik";
+import InputCreator from "../InputCreator/index";
 import * as Yup from "yup";
-
-const MyTextInput = ({ label, ...props }) => {
-    const [field, meta] = useField(props);
-    return (
-        <>
-            <label htmlFor={props.id || props.name}>{label}</label>
-            <input className="text-input" {...field} {...props} />
-            {meta.touched && meta.error ? (
-                <div className="error">{meta.error}</div>
-            ) : null}
-        </>
-    );
-};
 
 export default function FormikH() {
     return (
@@ -45,31 +33,31 @@ export default function FormikH() {
                 }}
             >
                 <Form>
-                    <MyTextInput
+                    <InputCreator
                         label="First Name"
                         name="firstName"
                         type="text"
                         placeholder="Jane"
                     />
-                    <MyTextInput
+                    <InputCreator
                         label="Last Name"
                         name="lastName"
                         type="text"
                         placeholder="Jane"
                     />
-                    <MyTextInput
+                    <InputCreator
                         label="Email"
                         name="email"
                         type="text"
                         placeholder="janedoe@email.com"
                     />
-                    <MyTextInput
+                    <InputCreator
                         label="Password"
                         name="password"
                         type="password"
                         placeholder="Your secret password"
                     />
-                    <button type="submit">Submit</button>
+                    <button type="submit">submit</button>
                 </Form>
             </Formik>
         </>
